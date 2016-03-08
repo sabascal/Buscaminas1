@@ -29,13 +29,24 @@ public class PanelMarcador extends JPanel implements Observer{
 	private int segundos;
 	private javax.swing.Timer tim;
 	public PanelMarcador(int n){
-		tminas = new JLabel("10");
+		nivel = n;
+		int m = 0;
+		if (n == 1){
+			m = n * 10;
+		}
+		if (n == 2){
+			m = n * 15;
+		}
+		if (n == 3){
+			m = n * 25;
+		}
+		tminas = new JLabel(String.valueOf(m));
 		ttiempo = new JLabel("000");
 		reinicio = new JButton();
 		ttiempo.setOpaque(true);
 		tminas.setOpaque(true);
 		setPreferredSize(new Dimension(41*10, 50));
-		setLayout(new GridLayout(1,3,80,1));
+		setLayout(new GridLayout(1,3,80*n,1));
 		add(tminas);
 		add(reinicio);
 		add(ttiempo);
@@ -65,10 +76,11 @@ public class PanelMarcador extends JPanel implements Observer{
 		reinicio.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
 				System.out.println("REINICIAR JUEGO....");
+				String jug = ((Tablero)(getParent().getParent().getParent().getParent())).getJugador();
 			    ((Tablero)(getParent().getParent().getParent().getParent())).cerrar();
 				
-				Tablero t = new Tablero(1);
-				
+				Tablero t = new Tablero(n);
+				t.setJugador(jug);
 			}
 		});
 	}

@@ -23,7 +23,7 @@ public class Tablero extends JFrame{
   		  jugador.setForeground(Color.RED);
   		 
   		  jugador.setPreferredSize(new Dimension(30,20));
-  	
+  		  
   		  add(pm);
   		  add(jugador);
   		  add(pc);
@@ -31,6 +31,9 @@ public class Tablero extends JFrame{
   		  pack();
   		  setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
   		  setVisible(true);  
+      }
+      public String getJugador(){
+    	  return jugador.getText();
       }
       public void setJugador(String jug){
     	  jugador.setText(jug);

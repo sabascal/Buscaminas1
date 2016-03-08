@@ -144,7 +144,7 @@ public class PanelCasillas extends JPanel {
 		setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 		//jp.setVisible(true);
 		
-	
+
 	}
 	public int getNivel(){
 		return nivel;

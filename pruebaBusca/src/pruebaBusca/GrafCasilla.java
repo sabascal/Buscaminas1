@@ -7,14 +7,6 @@ import javax.swing.*;
 public class GrafCasilla extends JButton{
 	
     private Casilla c;
-    
-	/*private int valor;
-	private int x;
-	private int y;
-	boolean bandera;
-	boolean bomba; 
-	private String imagen;
-	private Icon icanterior; */
 	
 	public GrafCasilla (Casilla cas){
 		c = cas;
@@ -25,6 +17,7 @@ public class GrafCasilla extends JButton{
 		setPreferredSize(new Dimension(41,41));
 		addActionListener(new manejadorBoton());
 		addMouseListener(new botonesMousse());
+		//this.setContentAreaFilled(false);
 	}
 	
 	public Casilla getCasilla(){
@@ -33,7 +26,6 @@ public class GrafCasilla extends JButton{
 	
 	public class manejadorBoton implements ActionListener{
 
-		@SuppressWarnings("deprecation")
 		public void actionPerformed(ActionEvent e) {
 			String sv = "";
 			String nomb = null;
@@ -213,6 +205,7 @@ public class GrafCasilla extends JButton{
 			}
 			setFocusable(false);  
 			getCasilla().setOculta();
+		
 			}
         }  
 	}

@@ -8,7 +8,7 @@ public class Test_main {
 		String jug = "";
 		int n = 0;
 		System.out.println("Introduzca usuario (si no quiere enter): ");
-		jug = s.next();
+		jug = s.nextLine();
 		System.out.println("Introduzca nivel (1,2,3): ");
 		n = s.nextInt();
 		Tablero t = new Tablero(n);
