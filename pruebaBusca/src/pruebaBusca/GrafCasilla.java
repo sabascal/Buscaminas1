@@ -10,11 +10,12 @@ public class GrafCasilla extends JButton{
 	
 	public GrafCasilla (Casilla cas){
 		c = cas;
-		setName("C"+c.getColum()/41+c.getFila()/41);
-		setBounds(c.getFila(), c.getColum(), 41,  41);
+		setName("C"+c.getColum()/41+c.getFila()/40);
+		setBounds(c.getFila(), c.getColum(), 40,  41);
 		setVisible(true);
 		setEnabled(true);
-		setPreferredSize(new Dimension(41,41));
+		setPreferredSize(new Dimension(40,41));
+		setFont(new Font("Dialog", Font.BOLD, 11));
 		addActionListener(new manejadorBoton());
 		addMouseListener(new botonesMousse());
 		//this.setContentAreaFilled(false);
@@ -75,6 +76,7 @@ public class GrafCasilla extends JButton{
 			    	 //  setEnabled(false);
 			    	 //  setFocusable(false); 
 			    	   setText(sv);
+			    	
 				       setEnabled(false);
 			    	   if (e.getModifiers() != 0){
 			    		   csPrim = (GrafCasilla) e.getSource();

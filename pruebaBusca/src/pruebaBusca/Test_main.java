@@ -12,7 +12,7 @@ public class Test_main {
 		System.out.println("Introduzca nivel (1,2,3): ");
 		n = s.nextInt();
 		Tablero t = new Tablero(n);
-		t.setJugador(jug);
+		t.setJugador("Player: "+jug+" (nivel"+n+")");
 
 	}
 

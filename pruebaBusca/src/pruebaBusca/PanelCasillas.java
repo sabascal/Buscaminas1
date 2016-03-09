@@ -126,7 +126,7 @@ public class PanelCasillas extends JPanel {
 		//jp.setLayout(new GridLayout(10,7000));
 		//setLayout(new GridBagLayout());
 		//GridLayout g = new GridLayout(f ,c);
-		Dimension d = new Dimension (41*c,41*f);
+		Dimension d = new Dimension (40*c,41*f);
 		setPreferredSize(d);
 		//FlowLayout flow = new FlowLayout();
 		
@@ -136,7 +136,7 @@ public class PanelCasillas extends JPanel {
 		GrafCasilla gc1;
 		for (int i= 0; i < c; i++)
 		  for (int j = 0; j < f; j++){
-			c1 = new Casilla (cas[j][i],i*41,j*41,"");
+			c1 = new Casilla (cas[j][i],i*40,j*41,"");
 			gc1 = new GrafCasilla(c1);
 			add(gc1, null);
 			

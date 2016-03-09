@@ -45,11 +45,12 @@ public class PanelMarcador extends JPanel implements Observer{
 		reinicio = new JButton();
 		ttiempo.setOpaque(true);
 		tminas.setOpaque(true);
-		setPreferredSize(new Dimension(41*10, 50));
-		setLayout(new GridLayout(1,3,80*n,1));
-		add(tminas);
-		add(reinicio);
-		add(ttiempo);
+		setPreferredSize(new Dimension(40*10, 50));
+		//setLayout(new GridLayout(1,3,30*n,1));
+		setLayout(new BorderLayout());
+		add(tminas, BorderLayout.WEST);
+		add(reinicio, BorderLayout.CENTER);
+		add(ttiempo, BorderLayout.EAST);
 	
 		reinicio.setIcon(new ImageIcon("cfeliz.jpg"));
 		reinicio.setEnabled(true);
@@ -61,8 +62,8 @@ public class PanelMarcador extends JPanel implements Observer{
 		Border brd = BorderFactory.createLineBorder(Color.BLUE, 5);
 		ttiempo.setBorder(brd);
 		tminas.setBorder(brd);
-		tminas.setPreferredSize(new Dimension(41,41));
-		ttiempo.setPreferredSize(new Dimension(41,41));
+		tminas.setPreferredSize(new Dimension(51,51));
+		ttiempo.setPreferredSize(new Dimension(51,51));
 		ttiempo.setForeground(Color.RED);
 		ttiempo.setBackground(Color.BLACK);
 		tminas.setForeground(Color.RED);
