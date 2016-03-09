@@ -18,7 +18,8 @@ public class GrafCasilla extends JButton{
 		setFont(new Font("Dialog", Font.BOLD, 11));
 		addActionListener(new manejadorBoton());
 		addMouseListener(new botonesMousse());
-		//this.setContentAreaFilled(false);
+	
+
 	}
 	
 	public Casilla getCasilla(){
@@ -47,27 +48,27 @@ public class GrafCasilla extends JButton{
 			}
 			if (!c.getBandera()){
 			if (c.getValor() == -9){
-				setOpaque(false);
+				//setOpaque(false);
 				setIcon(new ImageIcon("bomba.jpg"));
 		    	setBackground(Color.RED);
 		    	setEnabled(false);
-		    	
+		   
+		        
 		    	Component listCas [] = ((JPanel) getParent()).getComponents();
 		    	for (int i = 0; i < listCas.length; i++){
 		    		if (((GrafCasilla)listCas[i]).getCasilla().getValor() == -9){
-		    			((GrafCasilla)listCas[i]).setOpaque(false);
+		    			((GrafCasilla)listCas[i]).setOpaque(true);
 		    			((GrafCasilla)listCas[i]).setBackground(Color.RED);
+		    			((GrafCasilla)listCas[i]).setForeground(Color.RED);
 		    			((GrafCasilla)listCas[i]).setIcon(new ImageIcon("bomba.jpg"));
-		    			((GrafCasilla)listCas[i]).setEnabled(false);
-		    			((GrafCasilla)listCas[i]).getCasilla().parar();
-		    			
+		    			((GrafCasilla)listCas[i]).setEnabled(false);	
 		    		}
 		    		else{
 		    			((GrafCasilla)listCas[i]).setBackground(Color.GREEN);
 		    			((GrafCasilla)listCas[i]).setEnabled(false);
 		    		}
 		    	}	
-		    	
+		    	c.parar();
 			}
 			else{
 				   setOpaque(false);
@@ -78,6 +79,7 @@ public class GrafCasilla extends JButton{
 			    	   setText(sv);
 			    	
 				       setEnabled(false);
+				       
 			    	   if (e.getModifiers() != 0){
 			    		   csPrim = (GrafCasilla) e.getSource();
 			    	   }
